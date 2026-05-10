@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>계정 삭제 신청 | LevUp</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0a0e1a;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+    .container { max-width: 640px; margin: 0 auto; padding: 48px 24px; }
+    h1 { font-size: 24px; color: #ffffff; margin-bottom: 8px; }
+    .subtitle { color: #888; font-size: 14px; margin-bottom: 40px; }
+    h2 { font-size: 16px; color: #e05a5a; margin: 28px 0 10px; }
+    p, li { font-size: 15px; color: #ccc; }
+    ul { padding-left: 20px; margin-top: 8px; }
+    li { margin-bottom: 6px; }
+    a { color: #4caf6e; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .btn {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 14px 28px;
+      background: #e05a5a;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn:hover { background: #c94444; text-decoration: none; }
+    .notice {
+      margin-top: 32px;
+      padding: 16px;
+      background: rgba(224,90,90,0.08);
+      border: 1px solid rgba(224,90,90,0.25);
+      border-radius: 10px;
+      font-size: 14px;
+      color: #aaa;
+    }
+    .lang-switch { text-align: right; margin-bottom: 32px; }
+    .lang-switch a { color: #888; font-size: 13px; margin-left: 12px; }
+    .lang-switch a.active { color: #4caf6e; font-weight: 600; }
+    .section-ko, .section-en { display: none; }
+    .section-ko.visible, .section-en.visible { display: block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="lang-switch">
+      <a href="#" id="btn-ko" class="active" onclick="setLang('ko');return false;">한국어</a>
+      <a href="#" id="btn-en" onclick="setLang('en');return false;">English</a>
+    </div>
+
+    <!-- 한국어 -->
+    <div class="section-ko visible" id="ko">
+      <h1>계정 삭제 신청</h1>
+      <p class="subtitle">LevUp</p>
+
+      <p>계정 및 모든 데이터 삭제를 원하시면 아래 버튼을 눌러 이메일로 신청해주세요.</p>
+
+      <h2>삭제되는 데이터</h2>
+      <ul>
+        <li>이메일 주소 및 로그인 정보</li>
+        <li>닉네임, 게임 머니, 거래 기록</li>
+        <li>랭킹 데이터</li>
+      </ul>
+
+      <a class="btn" href="mailto:qwertyu12451@gmail.com?subject=LevUp%20%EA%B3%84%EC%A0%95%20%EC%82%AD%EC%A0%9C%20%EC%8B%A0%EC%B2%AD&body=%EC%82%AD%EC%A0%9C%EB%A5%BC%20%EC%9B%90%ED%95%98%EB%8A%94%20%EA%B3%84%EC%A0%95%20%EC%9D%B4%EB%A9%94%EC%9D%BC%20%EC%A3%BC%EC%86%8C%3A%20">
+        이메일로 삭제 신청하기
+      </a>
+
+      <div class="notice">
+        신청 후 <strong>30일 이내</strong>에 계정과 모든 관련 데이터가 삭제됩니다.<br>
+        삭제 후에는 복구가 불가능합니다.
+      </div>
+
+      <p style="margin-top:32px;">
+        <a href="privacy">← 개인정보처리방침으로 돌아가기</a>
+      </p>
+    </div>
+
+    <!-- English -->
+    <div class="section-en" id="en">
+      <h1>Account Deletion Request</h1>
+      <p class="subtitle">LevUp</p>
+
+      <p>To delete your account and all associated data, please tap the button below to send us an email.</p>
+
+      <h2>Data That Will Be Deleted</h2>
+      <ul>
+        <li>Email address and login credentials</li>
+        <li>Nickname, game balance, and trade history</li>
+        <li>Ranking data</li>
+      </ul>
+
+      <a class="btn" href="mailto:qwertyu12451@gmail.com?subject=LevUp%20Account%20Deletion%20Request&body=Email%20address%20of%20the%20account%20to%20delete%3A%20">
+        Request Deletion via Email
+      </a>
+
+      <div class="notice">
+        Your account and all related data will be deleted within <strong>30 days</strong> of your request.<br>
+        This action cannot be undone.
+      </div>
+
+      <p style="margin-top:32px;">
+        <a href="privacy">← Back to Privacy Policy</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('ko').classList.toggle('visible', lang === 'ko');
+      document.getElementById('en').classList.toggle('visible', lang === 'en');
+      document.getElementById('btn-ko').classList.toggle('active', lang === 'ko');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+</body>
+</html>
